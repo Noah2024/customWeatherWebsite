@@ -11,6 +11,7 @@ function reqeustWeatherData(lat, long){
         if (!response.ok){
             throw new Error("Api response was not ok" + response.statusText);
         }
+        return response.json();
     }).then(data => {
         console.log("Weather Dat Recieved", data);
     }
@@ -22,15 +23,17 @@ function reqeustWeatherData(lat, long){
 function locationSuccess(postion){
     lat = postion.coords.latitude;
     long = postion.coords.longitude;
+    console.log("Location Recieved");
     console.log("Latitude: " + lat +  ", Longitude: " + long);
-    return lat, long;
+    reqeustWeatherData(lat, long);
+    //return lat, long;
 }
 
 function requestLocationData(){
     console.log("Requesting Location Data from User");
     if (navigator.geolocation){
         let location = navigator.geolocation.getCurrentPosition(locationSuccess);
-        console.log("Location Recieved", location);
+        //console.log("Location Recieved", location);
         return location;
     }
 }
