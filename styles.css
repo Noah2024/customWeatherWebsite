@@ -24,15 +24,15 @@ h1 {
     background-size: 10%;
 }
 
-.error{
+.error {
     display: flex;
-    gap: 10px;
-    flex-direction: column;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack items vertically */
     height: 100vh;
-    flex-grow: 1;
-    background:  #ff7f50;
+    background: coral;
     border-radius: 20px;
+    overflow: hidden;
 }
 
 .loading {
