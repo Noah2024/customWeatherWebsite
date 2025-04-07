@@ -1,6 +1,11 @@
 const button = document.getElementById('apiRequest');
+const weatherContent = document.getElementById('weatherContent');
 let lat;
 let long;
+
+function setErrorConext(){
+
+}
 
 function reqeustWeatherData(lat, long){
     fetch('https://api.weather.gov/gridpoints/MPX/107,71/forecast', {
