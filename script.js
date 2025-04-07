@@ -1,14 +1,13 @@
 const button = document.getElementById('apiRequest');
 const weatherContent = document.getElementById('weatherContent');
 const loadingIcon = document.getElementById('loadingIcon');
-const weatherContentHeader = document.getElementById('weatherContentHeader');   
 
 let lat;
 let long;
 
 function setErrorConext(errorMessage){
-    console.log(weatherContentHeader);
-
+    const weatherContentHeader = document.getElementById('weatherContentHeader');  
+    errorMessage = errorMessage.replace(/\n/g, "<br>"); 
     weatherContentHeader.innerHTML = ""+errorMessage;
     weatherContent.classList.remove('loading');
     weatherContent.classList.add('error');
@@ -22,6 +21,7 @@ function reqeustWeatherData(lat, long){
         }
     }).then(response => {
         if (!response.ok){
+            setErrorConext("API response was not ok \n" + response + "\n Please try again later.");
             throw new Error("Api response was not ok" + response.statusText);
         }
         return response.json();
@@ -30,8 +30,8 @@ function reqeustWeatherData(lat, long){
     }
     ).catch(error => {
         console.error("There was a problem with the api request", error);
+        setErrorConext("There was a problem with the API request \n" + error + "\n Please try again later.");
     })
-    setErrorConext("Testing Error Context");
     }
 
 function locationSuccess(postion){
