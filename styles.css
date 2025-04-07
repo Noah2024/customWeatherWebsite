@@ -23,3 +23,45 @@ h1 {
     background-color: goldenrod;
     background-size: 10%;
 }
+
+.error{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    flex-direction: row;
+    height: 100vh;
+    flex-grow: 1;
+    background:  coral;
+    border-radius: 20px;
+}
+
+.loading{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    flex-direction: row;
+    height: 100vh;
+    flex-grow: 1;
+    background:  lightyellow;
+    border-radius: 20px;
+}
+
+.weatherContentClass{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    flex-direction: row;
+    height: 100vh;
+    flex-grow: 1;
+    background:  gray;
+    border-radius: 20px;
+    /*background: linear-gradient(to top, lightblue, grey);*/
+
+    /*background-color: lightcoral;*/
+}
+
+main{
+    background-color: lightblue;
+    border-radius: 20px;
+    padding: 20px;
+}  
