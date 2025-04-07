@@ -5,10 +5,6 @@ const loadingIcon = document.getElementById('loadingIcon');
 let lat;
 let long;
 
-function setWeatherContent(){
-    window.location.href = "secondPage.html";
-}
-
 function setErrorConext(errorMessage){
     const weatherContentHeader = document.getElementById('weatherContentHeader');  
     errorMessage = errorMessage.replace(/\n/g, "<br>"); 
@@ -30,8 +26,8 @@ function reqeustWeatherData(lat, long){
         }
         return response.json();
     }).then(data => {
-        console.log("Weather Dat Recieved", data);
-        setWeatherContent();
+        sessionStorage.setItem("weatherData", JSON.stringify(data));
+        window.location.href = "secondPage.html";
     }
     ).catch(error => {
         console.error("There was a problem with the api request", error);
