@@ -6,7 +6,7 @@ let lat;
 let long;
 
 function setWeatherContent(){
-    
+    window.location.href = "secondPage.html";
 }
 
 function setErrorConext(errorMessage){
@@ -31,6 +31,7 @@ function reqeustWeatherData(lat, long){
         return response.json();
     }).then(data => {
         console.log("Weather Dat Recieved", data);
+        setWeatherContent();
     }
     ).catch(error => {
         console.error("There was a problem with the api request", error);
@@ -50,14 +51,10 @@ function locationSuccess(postion){
 function requestLocationData(){
     console.log("Requesting Location Data from User");
     if (navigator.geolocation){
-        let location = navigator.geolocation.getCurrentPosition(locationSuccess);
+        let location = navigator.geolocation.getCurrentPosition(locationSuccess, () => setErrorConext("Browser needs location permissions"));
         //console.log("Location Recieved", location);
         return location;
     }
 }
 
-console.log(button);
-button.addEventListener('click', ()=>{
-    console.log("API Request Initiated");
-    requestLocationData();
-})
+requestLocationData();
