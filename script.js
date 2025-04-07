@@ -5,6 +5,10 @@ const loadingIcon = document.getElementById('loadingIcon');
 let lat;
 let long;
 
+function setWeatherContent(){
+    
+}
+
 function setErrorConext(errorMessage){
     const weatherContentHeader = document.getElementById('weatherContentHeader');  
     errorMessage = errorMessage.replace(/\n/g, "<br>"); 
