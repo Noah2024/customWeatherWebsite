@@ -3,8 +3,21 @@ let lat;
 let long;
 
 function reqeustWeatherData(lat, long){
-    
-}
+    fetch('https://api.weather.gov/gridpoints/MPX/107,71/forecast', {
+        headers:{
+            'User-Agent': "Personal Weather App (ndyurasko@gmail.com)"
+        }
+    }).then(response => {
+        if (!response.ok){
+            throw new Error("Api response was not ok" + response.statusText);
+        }
+    }).then(data => {
+        console.log("Weather Dat Recieved", data);
+    }
+    ).catch(error => {
+        console.error("There was a problem with the api request", error);
+    })
+    }
 
 function locationSuccess(postion){
     lat = postion.coords.latitude;
