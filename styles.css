@@ -68,7 +68,7 @@ main{
 
 .weatherContainer {
     display: grid;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px; /* Add spacing between grid items */
@@ -76,19 +76,20 @@ main{
     padding: 10px; /* Add padding inside the container */
 }
 .weatherBox {
-    height: 250px; /* Set a fixed height */
     background-color: white;
     border: 2px solid gray;
     border-radius: 10px;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-left: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     
 }
 
