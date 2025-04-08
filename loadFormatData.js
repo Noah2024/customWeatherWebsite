@@ -14,10 +14,11 @@ function loadWeatherData(data){
         <p> Temperature: ${curtTime.temperature} ${curtTime.temperatureUnit}</p>
         <p> Wind Speed: ${curtTime.windSpeed} </p>
         <p> Wind Direction: ${curtTime.windDirection} </p>
+        <p> ${curtTime.detailedForecast}/<p>
         `; 
     }
 }
-//p> ${curtTime.detailedForecast}/<p>
+//p> 
 
 document.addEventListener('DOMContentLoaded', () => {
     const weatherData = JSON.parse(sessionStorage.getItem("weatherData"));
